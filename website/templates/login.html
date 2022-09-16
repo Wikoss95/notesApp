@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}NotesApp - LogIn{% endblock %}
+{% block content %}
+<form method="POST">
+    <h3 align="center">Sign Up!</h3>
+    <div class="form-group">
+        <label for="email">E-mail address:</label>
+        <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Insert e-mail"/>
+        <label for="password">Password:</label>
+        <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Insert password"/>
+    </div>
+    <div class="p-3" align="center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

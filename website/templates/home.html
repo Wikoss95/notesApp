@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}NotesApp - Homepage{% endblock %}
+{% block content %}
+
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush " id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item list-group-item-info">
+    {{ note.data }}
+    <div class="float-end">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick="deleteNote({{ note.id }})"></button>
+    </div>
+<!--    <div class="float-end">-->
+<!--      <button type="button" class="btn-close" aria-label="Close"-->
+<!--              onClick="deleteNote({{ note.id }})"></button>-->
+<!--    </div>-->
+  </li>
+  {% endfor %}
+</ul>
+
+<form method="POST">
+  <div class="input-group">
+    <textarea name="note" id="note" class="form-control"></textarea>
+  </div>
+  <div align="center" class="p-3">
+    <button type="submit" class="btn btn-warning">Add Note</button>
+  </div>
+</form>
+
+<!--<h3>This is the homepage!-->
+<!--  <br> Grab some users, who are signed up here!</h3>-->
+<!--<br>-->
+<!--<table class="table">-->
+<!--  <thead class="table-info">-->
+<!--    <tr>-->
+<!--      <th scope="col">#</th>-->
+<!--      <th scope="col">Username</th>-->
+<!--      <th scope="col">E-mail</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr>-->
+<!--      <th scope="row">1</th>-->
+<!--      <td>Mark</td>-->
+<!--      <td>Otto</td>-->
+<!--    </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+{% endblock %}
